@@ -7,17 +7,15 @@ class Day03 : Day {
         var sum = 0
         val inp = input.joinToString()
 
-        var multiplication = inp.split("mul(")
+        val multiplication = inp.split("mul(")
         for (m in multiplication) {
             if (!m.contains(",") || !m.contains(")")) continue
 
-            var factors = m.split(",")
-            var iFactor = factors.firstOrNull()
-            if (iFactor == null) continue
+            val factors = m.split(",")
+            val iFactor = factors.firstOrNull() ?: continue
 
             try {
-                var iiFactor = factors[1].split(")").firstOrNull()
-                if (iiFactor == null) continue
+                val iiFactor = factors[1].split(")").firstOrNull() ?: continue
 
 
                 sum += iFactor.toInt() * iiFactor.toInt()
@@ -33,23 +31,21 @@ class Day03 : Day {
         var sum = 0
         val inp2 = "do()" + input.joinToString()
 
-        var chunks = inp2.split("don't()")
+        val chunks = inp2.split("don't()")
         for (chunk in chunks) {
             val dos = chunk.indexOf("do()")
             if (dos < 0) continue
 
             val inp = chunk.substring(dos)
-            var multiplication = inp.split("mul(")
+            val multiplication = inp.split("mul(")
             for (m in multiplication) {
                 if (!m.contains(",") || !m.contains(")")) continue
 
-                var factors = m.split(",")
-                var iFactor = factors.firstOrNull()
-                if (iFactor == null) continue
+                val factors = m.split(",")
+                val iFactor = factors.firstOrNull() ?: continue
 
                 try {
-                    var iiFactor = factors[1].split(")").firstOrNull()
-                    if (iiFactor == null) continue
+                    val iiFactor = factors[1].split(")").firstOrNull() ?: continue
 
                     sum += iFactor.toInt() * iiFactor.toInt()
                 } catch (_: Exception) {

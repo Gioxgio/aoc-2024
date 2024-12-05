@@ -32,7 +32,7 @@ class Day02 : Day {
 
             val trend = report[0] > report[1]
             for (i in 1..<report.size) {
-                var pLevel = report[i - 1]
+                val pLevel = report[i - 1]
                 val level = report[i]
                 val diff = abs(level - pLevel)
                 if (pLevel > level != trend || 0 >= diff || diff > 3) {
@@ -53,7 +53,7 @@ class Day02 : Day {
     private fun isReportCorrect(levels: List<Int>): Boolean {
         val trend = levels[0] > levels[1]
         for (i in 1..<levels.size) {
-            var pLevel = levels[i - 1]
+            val pLevel = levels[i - 1]
             val level = levels[i]
             val diff = abs(level - pLevel)
             if (pLevel > level != trend || 0 >= diff || diff > 3) {
