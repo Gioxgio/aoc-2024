@@ -1,4 +1,3 @@
-import org.example.Day03
 import org.example.Day04
 import org.junit.jupiter.api.Test
 import kotlin.test.assertEquals
@@ -16,9 +15,9 @@ class Day04Test {
 
     @Test
     fun part2_success() {
-        val dummyInput = getDummyInput2()
+        val dummyInput = getDummyInput()
         val result = day.part2(dummyInput)
-        assertEquals(48, result)
+        assertEquals(9, result)
     }
 
     private fun getDummyInput(): List<String> {
@@ -33,13 +32,6 @@ class Day04Test {
             SAXAMASAAA
             MAMMMXMMMM
             MXMXAXMASX
-        """.trimIndent()
-            .lines()
-    }
-
-    private fun getDummyInput2(): List<String> {
-        return """
-            xmul(2,4)&mul[3,7]!^don't()_mul(5,5)+mul(32,64](mul(11,8)undo()?mul(8,5))
         """.trimIndent()
             .lines()
     }
